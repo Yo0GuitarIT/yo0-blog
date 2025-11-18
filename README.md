@@ -240,14 +240,14 @@ Edit `tailwind.config.js` to customize colors:
 ```javascript
 export default {
   theme: {
-	extend: {
-	  colors: {
-		background: "hsl(...)",
-		foreground: "hsl(...)",
-		accent: "hsl(...)",
-		// Add your colors
-	  },
-	},
+    extend: {
+      colors: {
+        background: "hsl(...)",
+        foreground: "hsl(...)",
+        accent: "hsl(...)",
+        // Add your colors
+      },
+    },
   },
 };
 ```
@@ -259,15 +259,15 @@ Edit `src/styles/global.css` to define color variables:
 ```css
 @layer base {
   :root {
-	--color-background: #ffffff;
-	--color-foreground: #000000;
-	--color-accent: #0066cc;
+    --color-background: #ffffff;
+    --color-foreground: #000000;
+    --color-accent: #0066cc;
   }
 
   :root.dark {
-	--color-background: #0a0a0a;
-	--color-foreground: #ffffff;
-	--color-accent: #3399ff;
+    --color-background: #0a0a0a;
+    --color-foreground: #ffffff;
+    --color-accent: #3399ff;
   }
 }
 ```
