@@ -190,7 +190,7 @@
       @apply relative my-8;
     }
     figcaption {
-      @apply absolute inset-0 flex items-center justify-center bg-black/40 p-3 text-center text-white/86 opacity-0 group-hover:opacity-100 sm:text-xl md:text-2xl lg:text-3xl;
+      @apply absolute inset-0 flex items-center justify-center bg-black/40 p-3 text-center text-white/86 opacity-0 select-none group-hover:opacity-100 sm:text-xl md:text-2xl lg:text-3xl;
     }
 
     /* media */
