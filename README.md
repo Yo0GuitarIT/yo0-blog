@@ -4,7 +4,7 @@
 
 Read the [blog posts](https://ryze.pages.dev/) to understand how Ryze is built and how to customize it for your own site.
 
-## ✅ Features
+## Features
 
 - [x] Modern & minimalist design with responsive layout
 - [x] Light & Dark mode with system preference detection
@@ -24,8 +24,8 @@ Read the [blog posts](https://ryze.pages.dev/) to understand how Ryze is built a
 ## Lighhouse Performance Scores
 
 <p align="center">
-  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fryze.pages.dev%2F&form_factor=desktop">
-    <img width="710" alt="Ryze Lighthouse score" src="ryze-lighthouse-score.svg">
+  <a href="https://pagespeed.web.dev/analysis/https-ryze-pages-dev/pq9idv766z?form_factor=desktop">
+    <img width="710" alt="Ryze Lighthouse score" src="https://github.com/8366888C/Ryze/blob/main/src/image/ryze-lighthouse-score.png">
   <a>
 </p>
 

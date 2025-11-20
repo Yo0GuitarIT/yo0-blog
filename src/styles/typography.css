@@ -95,7 +95,7 @@
       }
     }
     h4 {
-      @apply pt-6 pb-1 text-2xl;
+      @apply pt-6 pb-2 text-2xl;
       a {
         @apply text-foreground no-underline hover:no-underline;
       }

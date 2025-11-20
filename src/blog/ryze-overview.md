@@ -12,38 +12,122 @@ featured: true
 
 ## Introduction
 
-Ryze is a modern, content-first and responsive Astro template / theme built to be small, fast, and practical. This guide gives you a no-nonsense reference on what Ryze provides out of the box, how to run it locally, and where to make common edits.
+Ryze is a modern, content-first and responsive Astro template / theme built to be small, fast, and scalable. This guide gives you a no-nonsense reference on what Ryze provides out of the box, how to run it locally, and where to make common edits.
 
 <br />
 
-What Ryze ships
+See the [SOURCE CODE](https://github.com/8366888C/Ryze) for more details.
+
+<br />
+
+#### What Ryze ships
 
 - **Astro v5**: server-side-compiled static pages and components. Astro renders to static HTML by default, so pages load fast and ship zero JS unless using islands.
-- **Tailwind CSS v4**: utility-first styling with theme and typography changes by extending colors, spacing, and font-family and more. Mobile first responsive design baked in.
-- **Markdown Blogs**: posts with frontmatter for metadata, consumed by the dynamic blog route(s) using the Content Collection API. Supports components in MDX if needed.
-- **TypeScript support and React integration**: use React hooks to build custom components for client-side interactivity when needed.
-- **SEO and editorial features**: meta tags, OG graph, robots.txt, RSS, sitemap integration, featured blogs and tags.
+- **Tailwind CSS v4**: utility-first styling with theme and typography changes by extending colors, spacing, font-family and more. Mobile first responsive design baked in.
+- **React integration & Typescript support**: use React hooks to build custom components for client-side interactivity when needed. Typescript enabled for type safety.
+- **Markdown Blogs**: markdown files with frontmatter for metadata, consumed by the dynamic blog route(s) using the Content Collection API. Supports components in MDX if needed.
+- **Shiki syntax highlighting and themes**: beautiful, performant code blocks with a variety of themes. Supports multiple languages and custom styling.
+- **SEO and editorial features**: meta tags, OG graph, robots.txt, RSS, sitemap integration, featured blogs and tags along with year-base categorization.
 
-Run it locally (exact commands)
+#### Lighthouse Performance Scores
+
+<figure class="group">
+  <a href="https://pagespeed.web.dev/analysis/https-ryze-pages-dev/pq9idv766z?form_factor=desktop">
+	<img loading="lazy" alt="Ryze Lighthouse score" src="/src/image/ryze-lighthouse-score.png">
+  <figcaption>Ryze Lighthouse Score</figcaption>
+  </a>
+</figure>
+
+## Project Structure
+
+```
+Ryze
+├── public/
+│   └── favicon.svg
+│
+├── src/
+│   ├── blog/
+│   │   ├── post-title.md
+│   │   ├── another-post.md
+│   │   └── ... (add your posts here)
+│   │
+│   ├── components/
+│   │   ├── Header.astro
+│   │   ├── Footer.astro
+│   │   ├── Navigation.astro
+│   │   ├── Seo.astro
+│   │   ├── Title.astro
+│   │   ├── PostCard.astro
+│   │   ├── Featured.astro
+│   │   ├── PostNavigation.astro
+│   │   ├── Pagination.astro
+│   │   ├── ThemeToggle.tsx
+│   │   ├── ProgressBar.tsx
+│   │   ├── Index.tsx
+│   │   ├── Introduction.astro
+│   │   ├── Newsletter.astro
+│   │   ├── Socials.astro
+│   │   ├── FeatureCard.astro
+│   │   └── Year.astro
+│   │
+│   ├── layouts/
+│   │   ├── BaseLayout.astro
+│   │   └── BlogLayout.astro
+│   │
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── [...slug].astro
+│   │   ├── 404.astro
+│   │   ├── rss.xml.ts
+│   │   ├── robots.txt.ts
+│   │   ├── archive/
+│   │   │   ├── [page].astro
+│   │   │   └── [year]/[page].astro
+│   │   └── tags/
+│   │       ├── index.astro
+│   │       └── [tag]/[page].astro
+│   │
+│   ├── styles/
+│   │   ├── global.css
+│   │   └── typography.css
+│   │
+│   ├── image/
+│   │   ├── astro.svg
+│   │   └── background.svg
+│   │
+│   └── content.config.ts
+│
+├── .prettierrc
+├── astro.config.mjs
+├── tsconfig.json
+├── eslint.config.js
+├── package.json
+├── LICENSE
+└── README.md
+```
+
+#### Run it locally
 
 ```powershell
-git clone https://github.com/yourusername/ryze.git
-cd ryze
+git clone git@github.com:8366888C/Ryze.git
+cd Ryze
 npm install
 npm run dev
 ```
 
-Open `http://localhost:4321` after `npm run dev`. This project config sets that port in package scripts or dev server config; change it only if you have port conflicts.
+This project sets `http://localhost:4321` port in package scripts or dev server config. Change it only if you have port conflicts.
 
-File map — what to change and why
+<br />
 
-- `astro.config.mjs` — Edit `site` to your production domain (used by sitemap, canonical URLs). Add or remove integrations here (e.g., `@astrojs/image`, `@astrojs/tailwind`). Keep `outDir` only if you need a custom build folder.
-- `tailwind.config.js` — Adjust `content` globs to include any custom file extensions; extend `theme` with brand colors and fonts. Incorrect globs will cause missing CSS in production due to purge.
-- `src/styles/global.css` — This is where you include Tailwind directives and your CSS `@layer base/components`. Put shared class sets in `@layer components` so Tailwind retains them in production.
-- `src/layouts/BaseLayout.astro` — The global wrapper: edit head tags (fonts, meta defaults), header/footer placement, and main container width. Changing layout affects every page.
-- `src/layouts/BlogLayout.astro` — Controls article rendering: meta injection (title, description), date display, and optional table of contents. Edit typography and spacing to control reading experience.
-- `src/components/*` — Small, single-purpose components: `Header.astro`, `Footer.astro`, `PostCard.astro`, `Seo.astro`. Edit these for site-wide UI changes. Keep them small and composable.
-- `src/blog/*.md` — Author content here; frontmatter drives routing and metadata. Use `slug` for stable URLs.
+#### File map - what to change and why
+
+- `astro.config.mjs` - Edit `site` to your production domain (used by sitemap, canonical URLs). Add or remove integrations here (e.g., `@astrojs/image`, `@astrojs/tailwind`). Keep `outDir` only if you need a custom build folder.
+- `tailwind.config.js` - Adjust `content` globs to include any custom file extensions; extend `theme` with brand colors and fonts. Incorrect globs will cause missing CSS in production due to purge.
+- `src/styles/global.css` - This is where you include Tailwind directives and your CSS `@layer base/components`. Put shared class sets in `@layer components` so Tailwind retains them in production.
+- `src/layouts/BaseLayout.astro` - The global wrapper: edit head tags (fonts, meta defaults), header/footer placement, and main container width. Changing layout affects every page.
+- `src/layouts/BlogLayout.astro` - Controls article rendering: meta injection (title, description), date display, and optional table of contents. Edit typography and spacing to control reading experience.
+- `src/components/*` - Small, single-purpose components: `Header.astro`, `Footer.astro`, `PostCard.astro`, `Seo.astro`. Edit these for site-wide UI changes. Keep them small and composable.
+- `src/blog/*.md` - Author content here; frontmatter drives routing and metadata. Use `slug` for stable URLs.
 
 Authoring and content rules
 
