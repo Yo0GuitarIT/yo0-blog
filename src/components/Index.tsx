@@ -39,6 +39,8 @@ export default function Index({ headings = [] }) {
       <div className="fixed right-[calc((100vw-56rem)/2-1rem)] bottom-6 z-3">
         <button
           onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-label="Toggle table of contents"
           className="bg-foreground/5 rounded-full p-3"
         >
           <IconMenu2
