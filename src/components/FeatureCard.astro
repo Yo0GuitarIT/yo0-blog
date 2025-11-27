@@ -1,92 +1,45 @@
 ---
 const { title, date, url, tags, readTime } = Astro.props;
+import IconChevronRight from "../assets/icons/chevron-right.svg";
+import IconArrowRight from "../assets/icons/arrow-right.svg";
+import IconCalendarWeek from "../assets/icons/calendar-week.svg";
+import IconClockHour3 from "../assets/icons/clock-hour-3.svg";
 ---
 
 <a
   href={url}
-  class="hover:bg-accent hover:ring-accent group ring-background flex h-full flex-col gap-3 rounded-lg shadow-lg ring-3 select-none hover:shadow-none hover:ring-3 active:ring-0 dark:shadow-2xl"
+  class="hover:bg-accent hover:ring-accent group ring-background animation flex h-full flex-col gap-3 rounded-lg shadow-lg ring-3 select-none hover:shadow-none hover:ring-3 active:ring-0 dark:shadow-2xl"
 >
   <div class="mx-4 mt-2 flex justify-between gap-6">
     <h3
-      class="text-foreground group-hover:text-background self-start rounded-lg text-xl group-hover:font-semibold group-hover:tracking-wide"
+      class="text-foreground group-hover:text-background animation animation self-start rounded-lg text-xl group-hover:font-semibold group-hover:tracking-wide"
     >
       {title}
     </h3>
     <div class="mt-1 flex">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right stroke-background size-0 stroke-2 group-hover:size-6"
-        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-          d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path d="M13 6l6 6"
-        ></path></svg
-      >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right stroke-foreground size-6 stroke-1 group-hover:size-0"
-        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-          d="M9 6l6 6l-6 6"></path></svg
-      >
+      <IconArrowRight
+        class="stroke-background animation size-0 stroke-2 group-hover:size-6"
+      />
+      <IconChevronRight
+        class="stroke-foreground animation size-6 stroke-1 group-hover:size-0"
+      />
     </div>
   </div>
   <div>
     <div class="mx-4 mb-3 flex flex-wrap gap-6 group-hover:mb-0">
       <div class="flex gap-1 font-mono">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-week stroke-foreground size-4 stroke-1 group-hover:size-0"
-          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-            d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"
-          ></path><path d="M16 3v4"></path><path d="M8 3v4"></path><path
-            d="M4 11h16"></path><path d="M7 14h.013"></path><path
-            d="M10.01 14h.005"></path><path d="M13.01 14h.005"></path><path
-            d="M16.015 14h.005"></path><path d="M13.015 17h.005"></path><path
-            d="M7.01 17h.005"></path><path d="M10.01 17h.005"></path></svg
-        >
-        <p class="text-sm opacity-90 group-hover:text-[0rem]">
+        <IconCalendarWeek
+          class="stroke-foreground animation size-4 stroke-1 group-hover:size-0"
+        />
+        <p class="animation text-sm opacity-90 group-hover:text-[0rem]">
           {date}
         </p>
       </div>
       <div class="flex gap-1 font-mono">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-clock-hour-3 stroke-foreground size-4 stroke-1 group-hover:size-0"
-          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-            d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path
-            d="M12 12h3.5"></path><path d="M12 7v5"></path></svg
-        >
-        <p class="text-sm opacity-90 group-hover:text-[0rem]">
+        <IconClockHour3
+          class="stroke-foreground animation size-4 stroke-1 group-hover:size-0"
+        />
+        <p class="animation text-sm opacity-90 group-hover:text-[0rem]">
           {readTime} min read
         </p>
       </div>
@@ -94,7 +47,7 @@ const { title, date, url, tags, readTime } = Astro.props;
     <div class="mx-3 flex flex-wrap">
       {
         tags.map((tag: string) => (
-          <p class="ring-foreground bg-background mx-1 rounded-lg px-3 pb-0.5 text-[0rem] opacity-90 group-hover:mb-3 group-hover:text-sm">
+          <p class="ring-foreground bg-background animation mx-1 mb-0 rounded-lg px-3 pb-0.5 text-[0rem] opacity-90 group-hover:mb-0 group-hover:text-sm">
             {tag}
           </p>
         ))

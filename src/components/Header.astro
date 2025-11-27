@@ -1,6 +1,7 @@
 ---
 import ThemeToggle from "./ThemeToggle";
 import Navigation from "./Navigation.astro";
+import IconRss from "../assets/icons/rss.svg";
 ---
 
 <header
@@ -17,24 +18,9 @@ import Navigation from "./Navigation.astro";
     <Navigation />
 
     <div class="flex items-center justify-center gap-4">
-      <ThemeToggle client:load />
+      <ThemeToggle client:idle />
       <a href="/rss.xml" aria-label="rss" title="rss"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-rss active-foreground size-5"
-          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-            d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path
-            d="M4 4a16 16 0 0 1 16 16"></path><path d="M4 11a9 9 0 0 1 9 9"
-          ></path></svg
-        ></a
+        ><IconRss class="active-foreground size-5" /></a
       >
     </div>
   </div>
