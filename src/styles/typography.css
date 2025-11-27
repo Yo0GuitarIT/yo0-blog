@@ -157,7 +157,7 @@
       @apply list-disc space-y-1 px-8 pb-6 text-lg leading-relaxed opacity-90;
     }
     li {
-      @apply px-1 leading-relaxed;
+      @apply px-1 text-lg leading-relaxed opacity-90 dark:opacity-80;
     }
 
     /* dictionary */
