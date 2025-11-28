@@ -32,7 +32,7 @@ See the [SOURCE CODE](https://github.com/8366888C/Ryze) for more details.
 #### Lighthouse Performance Scores
 
 <figure class="group">
-  <a href="https://pagespeed.web.dev/analysis/https-ryze-pages-dev/pq9idv766z?form_factor=desktop">
+  <a href="https://pagespeed.web.dev/analysis/https-ryze-pages-dev/rg7pfbgh1l?form_factor=desktop">
 	<img loading="lazy" alt="Ryze Lighthouse Score" src="/ryze-lighthouse-score.png">
   <figcaption>Ryze Lighthouse Score</figcaption>
   </a>

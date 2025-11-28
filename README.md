@@ -24,8 +24,8 @@ Read the [blog posts](https://ryze.pages.dev/) to understand how Ryze is built a
 ## Lighhouse Performance Scores
 
 <p align="center">
-  <a href="https://pagespeed.web.dev/analysis/https-ryze-pages-dev/pq9idv766z?form_factor=desktop">
-    <img width="710" alt="Ryze Lighthouse score" src="https://github.com/8366888C/Ryze/blob/main/src/image/ryze-lighthouse-score.png">
+  <a href="https://pagespeed.web.dev/analysis/https-ryze-pages-dev/rg7pfbgh1l?form_factor=desktop">
+    <img width="710" alt="Ryze Lighthouse score" src="https://github.com/8366888C/Ryze/blob/main/public/ryze-lighthouse-score.png">
   <a>
 </p>
 
