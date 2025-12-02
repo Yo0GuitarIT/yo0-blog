@@ -23,12 +23,12 @@
 @layer base {
   /* navbar */
   .navigation {
-    @apply hover:text-accent active:text-foreground text-base tracking-wider select-none;
+    @apply hover:text-accent text-base tracking-wider select-none;
   }
 
   /* button */
   .button {
-    @apply text-accent ring-accent hover:bg-accent hover:text-background rounded-lg px-3 py-1 tracking-wide ring-1 transition-all duration-100 ease-in-out select-none hover:font-semibold active:ring-0;
+    @apply text-accent ring-accent hover:bg-accent hover:text-background rounded-lg px-3 py-1 tracking-wide ring-1 select-none hover:font-semibold active:ring-0;
   }
 
   /* heading */
@@ -47,13 +47,13 @@
 
   /* common */
   .animation {
-    @apply transition-all duration-100 ease-in-out;
+    @apply transition-all duration-150 ease-in-out;
   }
   .paragraph {
-    @apply space-y-6 text-lg leading-relaxed opacity-90 dark:opacity-80;
+    @apply space-y-6 text-lg leading-relaxed opacity-90;
   }
   .link {
-    @apply text-accent active:text-foreground decoration-dashed underline-offset-3 transition-all duration-100 ease-in-out hover:underline hover:underline-offset-6;
+    @apply text-accent active:text-foreground decoration-dashed underline-offset-3 hover:underline hover:underline-offset-6;
   }
   .figure {
     @apply relative my-6;
@@ -64,13 +64,10 @@
   .figcaption {
     @apply absolute inset-0 flex items-center justify-center bg-black/40 p-3 text-center text-white/86 opacity-0 group-hover:opacity-100 sm:text-xl md:text-2xl lg:text-3xl;
   }
-  .index {
-    @apply selection:text-foreground text-foreground hover:text-accent active:text-foreground decoration-dashed underline-offset-3 transition-all duration-100 ease-in-out hover:underline hover:underline-offset-6;
-  }
 
   /* socials */
   .socials {
-    @apply hover:stroke-accent size-8 stroke-1 active:size-7;
+    @apply hover:stroke-accent size-8 stroke-1;
   }
 
   /* divider */
@@ -82,8 +79,6 @@
 /* MARKDOWN STYLES */
 @layer base {
   .markdown {
-    /* @apply prose; */
-
     /* headings */
     h2 {
       @apply pt-13 pb-3 text-4xl;
@@ -149,7 +144,7 @@
       @apply bg-inherit p-0 font-medium;
     }
     code {
-      @apply bg-accent text-background rounded-lg px-2 py-0.5 font-mono text-base font-semibold opacity-90;
+      @apply bg-accent text-background rounded-lg px-2 py-0.5 font-mono text-base opacity-100 dark:font-semibold;
     }
 
     /* lists */
@@ -193,12 +188,12 @@
       @apply relative my-8;
     }
     figcaption {
-      @apply absolute inset-0 flex items-center justify-center bg-black/40 p-3 text-center text-white/86 opacity-0 select-none group-hover:opacity-100 sm:text-xl md:text-2xl lg:text-3xl;
+      @apply absolute inset-0 flex items-center justify-center bg-black/40 p-3 text-center text-white/86 opacity-0 transition-all duration-100 ease-in-out select-none group-hover:opacity-100 sm:text-xl md:text-2xl lg:text-3xl;
     }
 
     /* media */
     img {
-      @apply ring-accent ring-1 select-none group-hover:brightness-75;
+      @apply ring-accent ring-1 transition-all duration-100 ease-in-out select-none group-hover:brightness-75;
     }
     video {
       @apply ring-accent my-6 ring-2 select-none;

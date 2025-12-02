@@ -6,6 +6,7 @@ date: 2025-11-21
 author: "Rahul"
 tags: ["ryze", "setup", "development"]
 featured: true
+editable: false
 ---
 
 <hr />

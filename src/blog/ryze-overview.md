@@ -6,6 +6,8 @@ date: 2025-11-20
 author: "Rahul"
 tags: ["ryze", "astro", "template", "guide"]
 featured: true
+editable: false
+
 ---
 
 <hr />
