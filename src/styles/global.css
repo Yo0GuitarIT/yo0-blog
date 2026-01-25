@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "./typography.css";
+@import 'tailwindcss';
+@import './typography.css';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -59,8 +59,8 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
 
-  --font-sans: "Space Grotesk Variable";
-  --font-mono: "IBM Plex Mono";
+  --font-sans: 'Space Grotesk Variable';
+  --font-mono: 'IBM Plex Mono';
 }
 
 /* BASE STYLING */

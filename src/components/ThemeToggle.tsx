@@ -1,30 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 // @ts-ignore
-import IconMoon from "../assets/icons/moon.svg?react";
+import IconMoon from '../assets/icons/moon.svg?react';
 // @ts-ignore
-import IconSun from "../assets/icons/sun-high.svg?react";
+import IconSun from '../assets/icons/sun-high.svg?react';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState("");
+  const [theme, setTheme] = useState('');
 
   // initialization from localStorage
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-    const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
     setTheme(initialTheme);
     document.documentElement.classList.toggle(
-      "light",
-      initialTheme === "light",
+      'light',
+      initialTheme === 'light'
     );
-    document.documentElement.classList.toggle("dark", initialTheme === "dark");
+    document.documentElement.classList.toggle('dark', initialTheme === 'dark');
   }, []);
 
   // keep localStorage + document class in sync
   useEffect(() => {
-    localStorage.setItem("theme", theme);
-    document.documentElement.classList.toggle("light", theme === "light");
-    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem('theme', theme);
+    document.documentElement.classList.toggle('light', theme === 'light');
+    document.documentElement.classList.toggle('dark', theme === 'dark');
   }, [theme]);
 
   // utility function
@@ -34,10 +34,10 @@ export default function ThemeToggle() {
 
   // button handler
   const toggleTheme = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const newTheme = theme === "dark" ? "light" : "dark";
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
 
     const transition = (document as any).startViewTransition?.(() =>
-      changeTheme(newTheme),
+      changeTheme(newTheme)
     );
     if (!transition) return changeTheme(newTheme);
 
@@ -47,22 +47,22 @@ export default function ThemeToggle() {
     transition.ready.then(() => {
       const path = [
         `circle(0% at ${x}px ${y}px)`,
-        `circle(150% at ${x}px ${y}px)`,
+        `circle(150% at ${x}px ${y}px)`
       ];
 
       document.documentElement.animate(
         {
-          clipPath: theme === "dark" ? path : [...path].reverse(),
+          clipPath: theme === 'dark' ? path : [...path].reverse()
         },
         {
           duration: 600,
-          easing: "ease-in-out",
-          fill: "forwards",
+          easing: 'ease-in-out',
+          fill: 'forwards',
           pseudoElement:
-            newTheme === "light"
-              ? "::view-transition-new(root)"
-              : "::view-transition-old(root)",
-        },
+            newTheme === 'light'
+              ? '::view-transition-new(root)'
+              : '::view-transition-old(root)'
+        }
       );
     });
   };
@@ -70,11 +70,11 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      aria-label={`Activate ${theme === "light" ? "dark" : "light"} mode`}
-      aria-pressed={theme === "dark"}
-      title={`Activate ${theme === "light" ? "dark" : "light"} mode`}
+      aria-label={`Activate ${theme === 'light' ? 'dark' : 'light'} mode`}
+      aria-pressed={theme === 'dark'}
+      title={`Activate ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
-      {theme === "light" ? (
+      {theme === 'light' ? (
         <IconMoon className="active:fill-foreground size-5" />
       ) : (
         <IconSun className="active:fill-foreground size-5" />

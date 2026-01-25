@@ -10,10 +10,10 @@ export interface Props {
 
 const {
   title = "Yo0's Blog",
-  description = "A minimalist Astro starter for mini blogs.",
-  author = "Yo0",
+  description = 'A minimalist Astro starter for mini blogs.',
+  author = 'Yo0',
   canonicalURL = new URL(Astro.url.pathname, Astro.url),
-  pubDate,
+  pubDate
 } = Astro.props;
 ---
 
@@ -47,7 +47,7 @@ const {
   rel="alternate"
   type="application/rss+xml"
   title="Yo0's Blog"
-  href={new URL("rss.xml", Astro.site)}
+  href={new URL('rss.xml', Astro.site)}
 />
 
 <meta

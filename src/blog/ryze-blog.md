@@ -1,10 +1,10 @@
 ---
-slug: "ryze-blog"
-title: "Creating Your First Blog Post with Ryze"
-description: "A practical walkthrough for writing, previewing, and publishing your first blog using the Ryze Astro + Tailwind starter"
+slug: 'ryze-blog'
+title: 'Creating Your First Blog Post with Ryze'
+description: 'A practical walkthrough for writing, previewing, and publishing your first blog using the Ryze Astro + Tailwind starter'
 date: 2025-11-22
-author: "Rahul"
-tags: ["blogging", "markdown", "ryze"]
+author: 'Rahul'
+tags: ['blogging', 'markdown', 'ryze']
 featured: true
 editable: true
 ---
@@ -33,12 +33,12 @@ src/blog/blog-title.md
 
 ```yaml
 ---
-slug: "blog-title"
-title: "Blog Title"
-description: "One-line summary suitable for meta description (120–160 chars)"
+slug: 'blog-title'
+title: 'Blog Title'
+description: 'One-line summary suitable for meta description (120–160 chars)'
 date: 2025-11-20
-author: "Your Name"
-tags: ["blogging", "getting-started", "first-blog"]
+author: 'Your Name'
+tags: ['blogging', 'getting-started', 'first-blog']
 featured: false
 editable: true
 ---

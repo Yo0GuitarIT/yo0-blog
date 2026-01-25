@@ -1,9 +1,9 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import type { BlogType } from "../../content.config";
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { BlogType } from '../../content.config';
 
-const blogs: BlogType[] = await getCollection("blogs");
+const blogs: BlogType[] = await getCollection('blogs');
 const tags = [...new Set(blogs.map((blog) => blog.data.tags).flat())].sort();
 ---
 

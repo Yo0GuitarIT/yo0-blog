@@ -1,12 +1,12 @@
 ---
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import PostCard from "../../../components/PostCard.astro";
-import { getCollection } from "astro:content";
-import Pagination from "../../../components/Pagination.astro";
-import type { BlogType } from "../../../content.config";
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostCard from '../../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+import Pagination from '../../../components/Pagination.astro';
+import type { BlogType } from '../../../content.config';
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
-  const blogs: BlogType[] = await getCollection("blogs");
+  const blogs: BlogType[] = await getCollection('blogs');
   const tags = [...new Set(blogs.flatMap((blog) => blog.data.tags))];
 
   return tags.flatMap((tag) => {
@@ -14,11 +14,11 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
       .filter((blog) => blog.data.tags.includes(tag))
       .sort(
         (a, b) =>
-          new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+          new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
       );
     return paginate(filteredBlogs, {
       params: { tag },
-      pageSize: 8,
+      pageSize: 8
     });
   });
 }
@@ -43,9 +43,9 @@ const { tag } = Astro.params as { tag: string };
               <PostCard
                 title={blog.data.title}
                 date={blog.data.date
-                  .toLocaleDateString("en-GB", {
-                    day: "numeric",
-                    month: "short",
+                  .toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'short'
                   })
                   .slice(0, 11)}
                 url={`/${blog.data.slug}`}

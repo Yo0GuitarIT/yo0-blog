@@ -1,19 +1,19 @@
 ---
-import { render, getCollection } from "astro:content";
-import BlogLayout from "../layouts/BlogLayout.astro";
-import type { BlogType } from "../content.config";
+import { render, getCollection } from 'astro:content';
+import BlogLayout from '../layouts/BlogLayout.astro';
+import type { BlogType } from '../content.config';
 
 export async function getStaticPaths() {
-  const blogs: BlogType[] = await getCollection("blogs");
+  const blogs: BlogType[] = await getCollection('blogs');
   const blogs_ = blogs.map((blog) => {
-    const words = (blog.body ?? "").split(/\s+/).filter(Boolean).length;
+    const words = (blog.body ?? '').split(/\s+/).filter(Boolean).length;
     const minutes = Math.ceil(words / 200);
 
     return { ...blog, data: { ...blog.data, readTime: minutes } };
   });
   return blogs_.map((blog: BlogType) => ({
     params: { slug: blog.data.slug },
-    props: { blog },
+    props: { blog }
   }));
 }
 

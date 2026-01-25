@@ -1,10 +1,10 @@
 ---
-slug: "ryze-overview"
-title: "Ryze -  Project Overview & Starter Guide"
-description: "Complete overview and feature set of Ryze Astro starter along with layouts and components included."
+slug: 'ryze-overview'
+title: 'Ryze -  Project Overview & Starter Guide'
+description: 'Complete overview and feature set of Ryze Astro starter along with layouts and components included.'
 date: 2025-11-20
-author: "Rahul"
-tags: ["ryze", "astro", "template", "guide"]
+author: 'Rahul'
+tags: ['ryze', 'astro', 'template', 'guide']
 featured: true
 editable: false
 ---
@@ -112,7 +112,7 @@ Write your content in Markdown, the human-friendly markup language. Astro also s
 
 ```markdown
 ---
-title: "Interactive Blog Post"
+title: 'Interactive Blog Post'
 ---
 
 This is regular markdown.
@@ -130,11 +130,11 @@ YAML frontmatter at the top of your markdown files stores metadata.
 
 ```markdown
 ---
-title: "Post Title"
+title: 'Post Title'
 description: "What's this about?"
 date: 2025-11-19
-author: "Your Name"
-tags: ["tag1", "tag2"]
+author: 'Your Name'
+tags: ['tag1', 'tag2']
 featured: true
 editable: false
 ---
@@ -258,19 +258,19 @@ Here you can:
 
 ```typescript
 // @ts-check
-import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
-import vitePluginSvgr from "vite-plugin-svgr";
-import react from "@astrojs/react";
-import sitemap from "@astrojs/sitemap";
+import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
+import vitePluginSvgr from 'vite-plugin-svgr';
+import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss(), vitePluginSvgr({})],
+    plugins: [tailwindcss(), vitePluginSvgr({})]
   },
   devToolbar: {
-    enabled: false,
+    enabled: false
   },
   integrations: [react(), sitemap()],
 
@@ -278,20 +278,20 @@ export default defineConfig({
     shikiConfig: {
       defaultColor: false,
       themes: {
-        light: "github-light-high-contrast", // one-light
-        dark: "github-dark", // plastic
+        light: 'github-light-high-contrast', // one-light
+        dark: 'github-dark' // plastic
       },
-      wrap: true,
-    },
+      wrap: true
+    }
   },
 
   prefetch: {
-    prefetchAll: true,
+    prefetchAll: true
     // defaultStrategy: "load",
   },
 
-  output: "static",
-  site: "https://ryze.pages.dev",
+  output: 'static',
+  site: 'https://ryze.pages.dev'
 });
 ```
 
@@ -346,12 +346,12 @@ export interface Props {
   pubDate?: Date;
 }
 
-import "@fontsource-variable/space-grotesk";
-import "@fontsource/ibm-plex-mono";
-import Seo from "../components/Seo.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import "../styles/global.css";
+import '@fontsource-variable/space-grotesk';
+import '@fontsource/ibm-plex-mono';
+import Seo from '../components/Seo.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 const { title, description, author, url, pubDate } = Astro.props;
 ---
 
@@ -364,12 +364,12 @@ const { title, description, author, url, pubDate } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <Seo {title} {description} {author} {url} {pubDate} />
     <script is:inline>
-      const saved = localStorage.getItem("theme");
+      const saved = localStorage.getItem('theme');
       const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)",
+        '(prefers-color-scheme: dark)'
       ).matches;
       document.documentElement.classList.add(
-        saved || (prefersDark ? "dark" : "light"),
+        saved || (prefersDark ? 'dark' : 'light')
       );
     </script>
   </head>
@@ -399,9 +399,9 @@ Includes:
 
 ```astro
 ---
-import ProgressBar from "../components/ProgressBar";
-import BaseLayout from "./BaseLayout.astro";
-import Title from "../components/Title.astro";
+import ProgressBar from '../components/ProgressBar';
+import BaseLayout from './BaseLayout.astro';
+import Title from '../components/Title.astro';
 
 const { frontmatter, readTime } = Astro.props;
 ---
@@ -442,17 +442,17 @@ Includes:
 
 ```astro
 ---
-import ThemeToggle from "./ThemeToggle";
-import Navigation from "./Navigation.astro";
-import { IconRss } from "@tabler/icons-react";
+import ThemeToggle from './ThemeToggle';
+import Navigation from './Navigation.astro';
+import { IconRss } from '@tabler/icons-react';
 ---
 
 <header>
   <a
     href="/"
     class:list={[
-      "text-xl tracking-wider select-none",
-      Astro.url.pathname === "/" ? "text-accent" : "",
+      'text-xl tracking-wider select-none',
+      Astro.url.pathname === '/' ? 'text-accent' : ''
     ]}>Ryze</a
   >
   <div class="flex items-center justify-center gap-6">
@@ -482,7 +482,7 @@ Includes:
 
 ```astro
 ---
-import Socials from "./Socials.astro";
+import Socials from './Socials.astro';
 ---
 
 <footer>
@@ -510,7 +510,7 @@ A reusable component for displaying blog post information in card format with ti
 
 ```astro
 ---
-import { IconArrowRight } from "@tabler/icons-react";
+import { IconArrowRight } from '@tabler/icons-react';
 
 const { title, date, url, tags } = Astro.props;
 ---
@@ -553,10 +553,10 @@ Simply define your metadata in frontmatter, and the system generates proper HTML
 
 ```markdown
 ---
-title: "My Blog Post"
-description: "A brief summary for search results"
+title: 'My Blog Post'
+description: 'A brief summary for search results'
 date: 2025-11-20
-author: "Rahul"
+author: 'Rahul'
 ---
 ```
 

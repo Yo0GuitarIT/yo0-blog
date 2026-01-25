@@ -1,10 +1,10 @@
 ---
-slug: "ryze-setup"
-title: "Setting Up and Running Ryze Locally"
-description: "Complete local setup for Ryze with clone, install, and run commands, common troubleshooting fixes, and recommended next steps."
+slug: 'ryze-setup'
+title: 'Setting Up and Running Ryze Locally'
+description: 'Complete local setup for Ryze with clone, install, and run commands, common troubleshooting fixes, and recommended next steps.'
 date: 2025-11-21
-author: "Rahul"
-tags: ["ryze", "setup", "development"]
+author: 'Rahul'
+tags: ['ryze', 'setup', 'development']
 featured: true
 editable: false
 ---
@@ -177,9 +177,9 @@ Key options:
 Useful for avoiding long relative paths. For example:
 
 ```typescript
-import Header from "@components/Header.astro";
+import Header from '@components/Header.astro';
 // Instead of:
-import Header from "../../../components/Header.astro";
+import Header from '../../../components/Header.astro';
 ```
 
 <br />
@@ -192,8 +192,8 @@ Edit these files to customize your site's behavior and appearance:
 
 ```javascript
 export default defineConfig({
-  site: "https://yourdomain.com",
-  integrations: [tailwind(), react()],
+  site: 'https://yourdomain.com',
+  integrations: [tailwind(), react()]
 });
 ```
 
@@ -205,12 +205,12 @@ Edit `src/blog` markdown files to change posts. Update the frontmatter.
 
 ```markdown
 ---
-slug: "your-post"
-title: "Your Title"
-description: "Your description"
+slug: 'your-post'
+title: 'Your Title'
+description: 'Your description'
 date: 2025-01-01
-author: "Your Name"
-tags: ["tag1", "tag2"]
+author: 'Your Name'
+tags: ['tag1', 'tag2']
 featured: true
 editable: false
 ---

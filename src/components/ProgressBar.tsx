@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function ScrollProgressBar() {
   const [scrollPercent, setScrollPercent] = useState(0);
@@ -11,8 +11,8 @@ export default function ScrollProgressBar() {
       setScrollPercent(scrolled);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
