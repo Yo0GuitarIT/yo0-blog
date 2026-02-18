@@ -10,7 +10,7 @@ export interface Props {
 import '@fontsource-variable/space-grotesk';
 import '@fontsource/ibm-plex-mono';
 import Seo from '../components/Seo.astro';
-import Header from '../components/Header.astro';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/global.css';
 const { title, description, author, url, pubDate } = Astro.props;
@@ -35,7 +35,7 @@ const { title, description, author, url, pubDate } = Astro.props;
     </script>
   </head>
   <body class="body-margin">
-    <Header />
+    <Header client:idle />
     <main class="main-margin bg-background relative z-1 min-h-svh">
       <slot />
     </main>
