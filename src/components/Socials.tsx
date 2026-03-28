@@ -7,7 +7,7 @@ import IconTwitter from '../assets/icons/brand-x.svg?react';
 const socials = [
   {
     name: 'github',
-    href: 'http:s://github.com/',
+    href: 'https://github.com/',
     icon: IconGithub
   },
   {
