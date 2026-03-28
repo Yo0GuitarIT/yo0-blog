@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className="footer-margin sticky bottom-0 z-0">
-      <Socials />
+      {/* <Socials /> */}
       <div className="text-foreground/50 flex items-center justify-between text-sm select-none">
         <p>{`© ${currentYear} MIT License`}</p>
         <p>
