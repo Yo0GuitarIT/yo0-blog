@@ -5,8 +5,8 @@ description: 'A practical walkthrough for writing, previewing, and publishing yo
 date: 2025-11-22
 author: 'Rahul'
 tags: ['blogging', 'markdown', 'ryze']
-featured: true
-editable: true
+featured: false
+editable: false
 ---
 
 <hr />

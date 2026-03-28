@@ -5,7 +5,7 @@ description: 'Complete local setup for Ryze with clone, install, and run command
 date: 2025-11-21
 author: 'Rahul'
 tags: ['ryze', 'setup', 'development']
-featured: true
+featured: false
 editable: false
 ---
 

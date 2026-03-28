@@ -5,7 +5,7 @@ description: 'Complete deployment guide for Ryze with builds, hosting options, C
 date: 2025-11-23
 author: 'Rahul'
 tags: ['ryze', 'deploy', 'cloudflare']
-featured: true
+featured: false
 editable: false
 ---
 

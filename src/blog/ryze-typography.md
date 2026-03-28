@@ -5,8 +5,8 @@ description: A full visual walkthrough of every markdown element styled       us
 date: 2025-11-25
 author: Rahul
 tags: ['markdown', 'typography', 'tailwind']
-featured: true
-editable: true
+featured: false
+editable: false
 ---
 
 <hr />
