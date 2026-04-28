@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-
+import { Font } from "astro:assets";
 
 const ROUTERS = [
   { name: "Home", path: "/" },
@@ -18,9 +18,10 @@ const ROUTERS = [
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <Font cssVariable="--font-jetbrains-mono" preload />
     <title>Astro</title>
   </head>
-  <body class="flex justify-center bg-slate-800 text-slate-300">
+  <body class="flex justify-center bg-slate-800 font-mono text-slate-300">
     <div class="block w-2xl">
       <h1 class="font-bold">Yo0'Blog</h1>
       <nav>
