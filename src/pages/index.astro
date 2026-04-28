@@ -1,27 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Introduction from '../components/Introduction';
-import Featured from '../components/Featured.astro';
-// import Newsletter from '../components/Newsletter';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<BaseLayout
-  title="Yo0's Blog"
-  description="A minimalist Astro starter for personal blogs."
-  author="Rahul"
-  url="https://yo0-blog.pages.dev"
->
-  <div class="center">
-    <section>
-      <Introduction />
-    </section>
-    <hr />
-    <section>
-      <Featured />
-    </section>
-    <!-- <hr />
-    <section>
-      <Newsletter />
-    </section> -->
-  </div>
-</BaseLayout>
+<Layout>
+  <h1 class="text-3xl font-bold">Welcome to my blog!</h1>
+  <p class="mt-4 text-lg">This is where I share my thoughts and experiences.</p>
+</Layout>

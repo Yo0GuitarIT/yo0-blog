@@ -1,39 +1,25 @@
 {
   "name": "yo0-blog",
   "type": "module",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint . --ext .js,.ts,.astro",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,astro,json,css,md}\"",
-    "fix": "pnpm format && pnpm lint --fix"
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.2",
-    "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.7.2",
-    "@fontsource-variable/space-grotesk": "^5.2.10",
-    "@fontsource/ibm-plex-mono": "^5.2.7",
-    "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.2.2",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "astro": "^6.1.1",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "tailwindcss": "^4.2.2",
-    "vite-plugin-svgr": "^4.5.0"
+    "@tailwindcss/vite": "^4.2.4",
+    "astro": "^6.1.10",
+    "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^8.57.2",
-    "eslint": "^10.1.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-astro": "^1.6.0",
-    "prettier": "3.8.1",
+    "prettier": "3.8.3",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.2"
+    "prettier-plugin-tailwindcss": "^0.8.0"
   }
 }
