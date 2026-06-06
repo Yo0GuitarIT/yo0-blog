@@ -1,7 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+interface Post {
+  frontmatter: {
+    title: string;
+    date: string;
+  };
+}
 ---
 
-<Layout>
-  <p class="text-lg">This is where I share my thoughts and experiences.</p>
-</Layout>
+<Layout> 這是首頁 </Layout>
