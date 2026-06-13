@@ -16,11 +16,11 @@ const sortedPosts = allPosts.sort(
         <li>
           <a href={`/posts/${post.id}`}>
             <span>{post.data.title}</span>
-            <time datetime={post.data.date.toISOString()}>
-              {post.data.date.toLocaleDateString("zh-TW")}
-            </time>
-            <p>{post.data.description}</p>
           </a>
+          <time datetime={post.data.date.toISOString()}>
+            {post.data.date.toLocaleDateString("zh-TW")}
+          </time>
+          <p>{post.data.description}</p>
         </li>
       ))
     }
