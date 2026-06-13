@@ -1,6 +1,5 @@
 @import "tailwindcss";
-
-@plugin "@tailwindcss/typography";
+@import "./markdown.css";
 
 @theme inline {
   --font-mono: var(--font-jetbrains-mono);

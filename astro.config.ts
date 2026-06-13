@@ -14,4 +14,9 @@ export default defineConfig({
       cssVariable: "--font-jetbrains-mono",
     },
   ],
+  markdown: {
+    shikiConfig: {
+      theme: "vitesse-light", // 或其他主題
+    },
+  },
 });
