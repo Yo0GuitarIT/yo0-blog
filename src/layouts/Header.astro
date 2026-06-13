@@ -6,8 +6,8 @@ const ROUTES = [
 ];
 ---
 
-<header class="mb-2 flex items-center justify-between border-b py-2">
-  Yo0's Blog
+<header class="flex items-center justify-between">
+  <h1>Yo0's Blog</h1>
   <div class="flex gap-4">
     {ROUTES.map((route) => <a href={route.path}>{route.name}</a>)}
   </div>
