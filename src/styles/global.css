@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "./markdown.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --font-mono: var(--font-jetbrains-mono);
 }

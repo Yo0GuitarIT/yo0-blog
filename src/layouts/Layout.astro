@@ -15,6 +15,15 @@ import { Font } from "astro:assets";
     <meta name="generator" content={Astro.generator} />
     <title>Yo0's Blog</title>
     <Font cssVariable="--font-jetbrains-mono" preload />
+    <script is:inline>
+      const theme =
+        localStorage.getItem("theme") ??
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+      document.documentElement.classList.toggle("dark", theme === "dark");
+      document.documentElement.style.colorScheme = theme;
+    </script>
   </head>
   <body class="flex justify-center">
     <div class="w-full max-w-2xl space-y-2 p-2">
