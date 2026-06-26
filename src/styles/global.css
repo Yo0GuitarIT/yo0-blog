@@ -6,7 +6,11 @@
 }
 
 @layer base {
+  html {
+    color-scheme: light dark;
+  }
   body {
     font-family: var(--font-jetbrains-mono);
+    @apply bg-gray-100 text-gray-800 dark:bg-gray-950 dark:text-gray-300;
   }
 }

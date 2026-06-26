@@ -16,7 +16,10 @@ export default defineConfig({
   ],
   markdown: {
     shikiConfig: {
-      theme: "vitesse-light", // 或其他主題
+      themes: {
+        light: "vitesse-light",
+        dark: "vitesse-dark",
+      },
     },
   },
 });
