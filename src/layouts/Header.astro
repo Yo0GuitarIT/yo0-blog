@@ -5,6 +5,13 @@ const isMenu = Astro.url.pathname === "/menu";
 
 <header>
   <div class="flex items-center justify-end gap-2 text-right">
+    <a
+      href="/rss.xml"
+      aria-label="RSS 訂閱"
+      class="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-100"
+    >
+      <Icon name="mdi:rss" class="size-5" />
+    </a>
     <button
       id="theme-toggle"
       type="button"
@@ -16,14 +23,14 @@ const isMenu = Astro.url.pathname === "/menu";
     </button>
     {
       isMenu ? (
-        <button
-          id="back-btn"
-          type="button"
-          aria-label="返回"
+        <a
+          id="menu-close"
+          href="/"
+          aria-label="關閉選單"
           class="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-100"
         >
           <Icon name="mdi:close" class="size-5" />
-        </button>
+        </a>
       ) : (
         <a
           href="/menu"
@@ -51,7 +58,13 @@ const isMenu = Astro.url.pathname === "/menu";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 
-  document.getElementById("back-btn")?.addEventListener("click", () => {
-    history.back();
+  // 漸進增強：有同源的上一頁時，關閉選單改為返回上一頁；
+  // 否則維持 anchor 的預設行為（導回首頁）。
+  document.getElementById("menu-close")?.addEventListener("click", (e) => {
+    const ref = document.referrer;
+    if (history.length > 1 && ref && new URL(ref).origin === location.origin) {
+      e.preventDefault();
+      history.back();
+    }
   });
 </script>
