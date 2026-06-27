@@ -1,139 +1,46 @@
-# Ryze
+# Astro Starter Kit: Basics
 
-**Ryze** is a modern, reader-friendly and content-first starter built with **Astro v5**, **Tailwind CSS v4**, and optimized for SEO and responsiveness across all devices. Perfect for personal blogs and content-focused websites.
-
-Read the [blog posts](https://ryze.pages.dev/) to understand how Ryze is built and how to customize it for your own site.
-
-## Features
-
-- [x] Modern & minimalist design with responsive layout
-- [x] Light & Dark mode with system preference detection
-- [x] Static site generation for optimal performance
-- [x] Automatic sitemap and RSS feed generation
-- [x] SEO optimization (Open Graph, Twitter Cards, Canonical URLs)
-- [x] Markdown-based blog posts with frontmatter metadata
-- [x] Syntax highlighting with Shiki
-- [x] Featured posts and tag-based organization
-- [x] Archive and chronological browsing
-- [x] Reading time estimation
-- [x] TypeScript support
-- [x] Component-based architecture with Astro & React
-- [x] Tailwind CSS v4 for styling
-- [x] Code quality tools (ESLint & Prettier)
-
-## Lighhouse Performance Scores
-
-<p align="center">
-  <a href="https://pagespeed.web.dev/analysis/https-ryze-pages-dev/rg7pfbgh1l?form_factor=desktop">
-    <img width="710" alt="Ryze Lighthouse score" src="https://github.com/8366888C/Ryze/blob/main/public/ryze-lighthouse-score.png">
-  <a>
-</p>
-
-## Project Structure
-
+```sh
+pnpm create astro@latest -- --template basics
 ```
-Ryze
+
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
 ├── public/
 │   └── favicon.svg
-│
-├── src/
-│   ├── assets/
-│   │   └── ... (static assets like fonts, icons)
-│   ├── blog/
-│   │   ├── post-title.md
-│   │   ├── another-post.md
-│   │   └── ... (add your posts here)
-│   │
-│   ├── components/
-|   |   ├── CopyButton.astro
-│   │   ├── FeatureCard.astro
-│   │   ├── Featured.astro
-│   │   ├── Footer.astro
-│   │   ├── Header.astro
-│   │   ├── Introduction.astro
-│   │   ├── Navigation.astro
-│   │   ├── Newsletterastro
-│   │   ├── Pagination.astro
-│   │   ├── PostCard.astro
-│   │   ├── ProgressBar.tsx
-│   │   ├── Seo.astro
-│   │   ├── Socials.astro
-│   │   ├── ThemeToggle.tsx
-│   │   ├── Title.astro
-│   │   └── Year.astro
-│   │
-│   ├── layouts/
-│   │   ├── BaseLayout.astro
-│   │   └── BlogLayout.astro
-│   │
-│   ├── pages/
-│   │   ├── index.astro
-│   │   ├── [...slug].astro
-│   │   ├── 404.astro
-│   │   ├── rss.xml.ts
-│   │   ├── robots.txt.ts
-│   │   ├── archive/
-│   │   │   ├── [page].astro
-│   │   │   └── [year]/[page].astro
-│   │   └── tags/
-│   │       ├── index.astro
-│   │       └── [tag]/[page].astro
-│   │
-│   ├── styles/
-│   │   ├── global.css
-│   │   └── typography.css
-│   │
-│   └── content.config.ts
-│
-├── .gitignore
-├── .prettierrc
-├── astro.config.mjs
-├── tsconfig.json
-├── eslint.config.js
-├── package.json
-├── LICENSE
-└── README.md
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
 ```
 
-## Tech Stack
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-- [Astro v5](https://astro.build) - Static site generator
-- [React](https://reactjs.org/) - UI library for interactive components
-- [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript superset
-- [Tailwind CSS v4](https://tailwindcss.com/) - Utility-first CSS framework
-- [Tabler Icons](https://tabler-icons.io/) - Icon library
-- [Fontsource](https://fontsource.org/) - Self-hosted web fonts
-- [Cloudflare Pages](https://www.cloudflare.com/products/pages/) - Deployment platform
-- [Shiki](https://shiki.matsu.io/) - Syntax highlighting
-- [RSS](https://www.npmjs.com/package/rss) - RSS feed generation
-- [Sitemap](https://www.npmjs.com/package/sitemap) - Sitemap generation
-- [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/) - Code quality and formatting
+## 🧞 Commands
 
-## Installation
+All commands are run from the root of the project, from a terminal:
 
-```bash
-# Clone or download the project
-git clone https://github.com/8366888C/Ryze.git
-cd Ryze
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `pnpm install`         | Installs dependencies                            |
+| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm build`           | Build your production site to `./dist/`          |
+| `pnpm preview`         | Preview your build locally, before deploying     |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-# Install dependencies
-npm install
+## 👀 Want to learn more?
 
-# Start development server
-npm run dev
-```
-
-The site will be available at `http://localhost:4321`
-
-### Commands
-
-| Command             | Description                        |
-| ------------------- | ---------------------------------- |
-| `npm run dev`       | Start local development server     |
-| `npm run build`     | Build production-ready static site |
-| `npm run preview`   | Preview production build locally   |
-| `npm run astro ...` | Run Astro CLI commands             |
-
-## License
-
-This project is open source. See [LICENSE](LICENSE) for more information.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

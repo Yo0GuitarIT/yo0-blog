@@ -1,0 +1,52 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getEntry, render } from "astro:content";
+import { Icon } from "astro-icon/components";
+const aboutPage = await getEntry("pages", "about");
+
+if (!aboutPage) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await render(aboutPage);
+const { title } = aboutPage.data;
+
+const profileArray = [
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/yo0_36563",
+    icon: "mdi:instagram",
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/memento.mori1927",
+    icon: "mdi:facebook",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/Yo0GuitarIT",
+    icon: "mdi:github",
+  },
+];
+---
+
+<Layout>
+  <h1 class="text-xl">{title}</h1>
+  <article class="markdown-content">
+    <Content />
+  </article>
+  <div class="flex gap-2 text-gray-500 dark:text-gray-400">
+    {
+      profileArray.map((profile) => (
+        <a
+          href={profile.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={profile.name}
+        >
+          <Icon name={profile.icon} class="size-5" />
+        </a>
+      ))
+    }
+  </div>
+</Layout>

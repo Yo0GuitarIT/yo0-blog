@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const ROUTES = [
+  { name: "Home", path: "/" },
+  { name: "Posts", path: "/posts" },
+  { name: "About", path: "/about" },
+];
+---
+
+<Layout>
+  <ul>
+    {
+      ROUTES.map((route) => (
+        <li class="text-gray-500 hover:text-gray-800 hover:underline dark:text-gray-400 dark:hover:text-gray-100">
+          <a href={route.path}>{route.name}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
