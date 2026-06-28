@@ -58,7 +58,7 @@ const anchorStyle =
     {
       prevPost ? (
         <a href={`/posts/${prevPost.id}`} class={anchorStyle}>
-          &larr; {prevPost.data.title}
+          &larr; prev
         </a>
       ) : (
         <span />
@@ -67,7 +67,7 @@ const anchorStyle =
     {
       nextPost ? (
         <a href={`/posts/${nextPost.id}`} class={anchorStyle}>
-          {nextPost.data.title} &rarr;
+          next &rarr;
         </a>
       ) : (
         <span />
