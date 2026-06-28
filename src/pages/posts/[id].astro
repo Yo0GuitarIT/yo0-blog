@@ -4,14 +4,24 @@ import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
-  return allPosts.map((post) => ({
+  const sorted = allPosts.sort(
+    (a, b) => a.data.date.getTime() - b.data.date.getTime(),
+  );
+  return sorted.map((post, index) => ({
     params: { id: post.id },
-    props: { post },
+    props: {
+      post,
+      prevPost: index > 0 ? sorted[index - 1] : null,
+      nextPost: index < sorted.length - 1 ? sorted[index + 1] : null,
+    },
   }));
 }
 
-const { post } = Astro.props;
+const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await render(post);
+
+const anchorStyle =
+  "text-gray-500 dark:text-gray-400 hover:underline dark:hover:underline";
 ---
 
 <Layout
@@ -44,4 +54,24 @@ const { Content } = await render(post);
       <Content />
     </div>
   </article>
+  <div class="mt-8 flex justify-between">
+    {
+      prevPost ? (
+        <a href={`/posts/${prevPost.id}`} class={anchorStyle}>
+          &larr; {prevPost.data.title}
+        </a>
+      ) : (
+        <span />
+      )
+    }
+    {
+      nextPost ? (
+        <a href={`/posts/${nextPost.id}`} class={anchorStyle}>
+          {nextPost.data.title} &rarr;
+        </a>
+      ) : (
+        <span />
+      )
+    }
+  </div>
 </Layout>
