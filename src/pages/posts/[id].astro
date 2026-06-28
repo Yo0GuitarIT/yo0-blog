@@ -49,6 +49,13 @@ const anchorStyle =
           </p>
         )
       }
+      {post.data.image && (
+        <img
+          src={post.data.image}
+          alt={post.data.title}
+          class="mt-4 rounded-lg"
+        />
+      )}
     </header>
     <div class="markdown-content">
       <Content />
